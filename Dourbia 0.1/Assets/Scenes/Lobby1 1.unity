@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1093,11 +1092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7052949433179339787, guid: b6a14c5c3ba32ab4a960d7383222fb32, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 638
+      value: 438
       objectReference: {fileID: 0}
     - target: {fileID: 7052949433179339787, guid: b6a14c5c3ba32ab4a960d7383222fb32, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 42.95337
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7611634590014214642, guid: b6a14c5c3ba32ab4a960d7383222fb32, type: 3}
       propertyPath: m_Texture
@@ -1107,6 +1106,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: 9ffeeee1accdc4b4faf2b3e27b226340, type: 3}
+    - target: {fileID: 8506473222089226316, guid: b6a14c5c3ba32ab4a960d7383222fb32, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 85.95996
+      objectReference: {fileID: 0}
     - target: {fileID: 8506473222691294688, guid: b6a14c5c3ba32ab4a960d7383222fb32, type: 3}
       propertyPath: m_Name
       value: Online_Canvas
@@ -1121,11 +1124,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506473222691294690, guid: b6a14c5c3ba32ab4a960d7383222fb32, type: 3}
       propertyPath: m_ReferenceResolution.x
-      value: 1600
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 8506473222691294690, guid: b6a14c5c3ba32ab4a960d7383222fb32, type: 3}
       propertyPath: m_ReferenceResolution.y
-      value: 1000
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8506473222691294692, guid: b6a14c5c3ba32ab4a960d7383222fb32, type: 3}
       propertyPath: m_Pivot.x
