@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Start.unity
     guid: e46ee8e9873f411459ea25976f7d9238
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Roomgame.unity
     guid: 793f1384056a36946b66ace5175db96b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lobby1 1.unity
     guid: c2e1dfe1f81fdea46a26a0b1efba3ee9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MultiGame.unity
     guid: d54f7b19e7c283e4fb5b9a4a01efc626
+  - enabled: 1
+    path: Assets/Scenes/MultiGame RunningBoy.unity
+    guid: 84a7597da94b5ca4798603d89c9a183d
   - enabled: 0
     path: Assets/Scenes/Semi.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

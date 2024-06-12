@@ -1,40 +1,96 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Vuforia;
 
 public class SpawnWithPLane : MonoBehaviour
 {
-    public GameObject characterPrefab; // Character prefab to instantiate
+    public GameObject[] characterPrefab; // Character prefab to instantiate
     private GameObject spawnedCharacter; // Reference to the instantiated character
-
+    [SerializeField]
+    private int characterIndex = 0;
+    private GameObject bg;
+    public float cycleInterval = 20f; // Interval in seconds to cycle characters
+    private bool hited = true;
+    PlaneFinderBehaviour ground;
     void Start()
     {
+        bg = GameObject.Find("Bg");
         // Register for Vuforia ground plane events
-        PlaneFinderBehaviour ground  = FindObjectOfType<PlaneFinderBehaviour>();
+         ground  = FindObjectOfType<PlaneFinderBehaviour>();
+
         if (ground != null)
         {
-            ground.OnAutomaticHitTest.AddListener(OnGroundPlaneDetected);
-           
+            if (hited == true)
+            {
+                ground.OnAutomaticHitTest.AddListener(OnGroundPlaneDetected);
+                hited = false;
+            }
+
         }
     }
 
     void OnGroundPlaneDetected(HitTestResult result)
     {
-        // Destroy the previously spawned character
-        DestroyPreviousCharacter();
+        bg.SetActive(false);
 
-        // Instantiate a new character prefab at the detected position
         Vector3 position = result.Position;
         position.y = 0.1f;
-        spawnedCharacter = Instantiate(characterPrefab, position, Quaternion.identity);
+
+        //spawnedCharacter = Instantiate(characterPrefab[characterIndex], position, Quaternion.identity);
+        // characterIndex = (characterIndex + 1) % characterPrefab.Length; // Cycle through character prefabs
+        StartCoroutine(CycleCharacters(position));
     }
 
+
+
+    IEnumerator CycleCharacters(Vector3 position)
+    {
+        DestroyPreviousCharacter();
+
+
+
+
+        // Cycle through character prefabs
+
+
+        // Destroy the previous character and instantiate the new one
+
+      
+             spawnedCharacter = Instantiate(characterPrefab[characterIndex], position, Quaternion.identity);
+
+            
+        
+
+        yield return new WaitForSeconds(cycleInterval);
+
+
+
+
+
+    }
+
+
+    public void shownCharacters()
+    {
+        
+        
+        if(characterIndex >= characterPrefab.Length)
+        {
+            characterIndex += 1;
+        }
+        else
+        {
+            characterIndex = 0;
+        }
+    }
     void DestroyPreviousCharacter()
     {
-        if (spawnedCharacter != null)
-        {
+       
             Destroy(spawnedCharacter);
-        }
+            ground.PlaneIndicator.SetActive(true);
+
+        
     }
 }
